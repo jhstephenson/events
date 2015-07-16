@@ -1,14 +1,7 @@
 Rails.application.routes.draw do
   
-  get "events" => "events#index"
-  get "events/:id" => "events#show", as: "event"
-  get "events/:id/edit" => "events#edit", as: "edit_event"
-  patch "events/:id" => "events#update"
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
+  resources:events
+ 
   root 'events#index'
 
   # Example of regular route:
@@ -16,9 +9,6 @@ Rails.application.routes.draw do
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
 
   # Example resource route with options:
   #   resources :products do
